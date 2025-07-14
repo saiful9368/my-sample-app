@@ -1,0 +1,27 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - echo Installing dependencies...
+      - pip install --upgrade pip
+
+  pre_build:
+    commands:
+      - echo Pre-build: checking files...
+      - ls -l
+
+  build:
+    commands:
+      - echo Build: running app.py...
+      - python app.py
+
+  post_build:
+    commands:
+      - echo Post-build: Build completed successfully!
+
+artifacts:
+  files:
+    - '**/*'
